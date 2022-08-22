@@ -22,16 +22,22 @@ class UserModel extends DB
 
     public function CheckUsername($un)
     {
-        $qr = "SELECT id FROM users WHERE username = '$un'";
+        $qr = "SELECT id FROM user WHERE username = '$un'";
         $row = mysqli_query($this->conn, $qr);
         $kq = false;
         if (mysqli_num_rows($row) > 0) {
             $kq = true;
         }
-
-        if ($kq) {
-            echo "Tên đã bị trùng.Vui lòng nhập tên khác";
+        return $kq;
+    }
+    public function UpdateExceptID($id)
+    {
+        $qr = "SELECT * FROM user WHERE id != $id";
+        $row = mysqli_query($this->conn, $qr);
+        $kq = false;
+        if (mysqli_num_rows($row) > 0) {
+            $kq = true;
         }
-        return json_encode($kq);
+        return $kq;
     }
 }

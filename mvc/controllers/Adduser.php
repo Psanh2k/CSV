@@ -26,15 +26,23 @@ class Adduser extends Controller
             $password = $_POST['password'];
             $password = password_hash($password, PASSWORD_DEFAULT);
             $email = $_POST['email'];
+            $kq = $this->usermodel;
+            $check = $kq->CheckUsername($_POST['username']);
+            if ($check) {
+                $this->view("master", [
+                    "page" => "checkuser"
+                ]);
+            } else {
 
-            // insert database
-            $kq = $this->usermodel->AddUser($username, $password, $email);
+                // insert database
+                $rs = $kq->AddUser($username, $password, $email);
 
-            // Hien thi trang thai
-            $this->view("master", [
-                "page" => "addsuccess",
-                "result" => $kq
-            ]);
+                // Hien thi trang thai
+                $this->view("master", [
+                    "page" => "addsuccess",
+                    "result" => $rs
+                ]);
+            }
         }
     }
 }

@@ -10,7 +10,7 @@
               <label for="email" class="email">Email*</label>
           </div>
           <div class="input">
-              <input type="text" id="name" name="username" placeholder="Enter your name..." required>
+              <input type="text" id="name" name="username" placeholder="Enter your name..." required><span id="messageUn"></span>
               <input type="password" id="password" name="password" placeholder="Enter your password ..." required>
               <input type="email" id="email" name="email" required>
               <div id="messageUn"></div>

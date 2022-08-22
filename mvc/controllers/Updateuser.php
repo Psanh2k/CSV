@@ -26,16 +26,23 @@ class Updateuser extends Controller
             $password = $_POST['password'];
             $password = password_hash($password, PASSWORD_DEFAULT);
             $email = $_POST['email'];
+            $kq = $this->usermodel;
+            $check = $kq->CheckUsername($_POST['username']);
+            if ($check) {
+                $this->view("master", [
+                    "page" => "checkupdate"
+                ]);
+            } else {
+                // insert database
+                $kq->UpdateUser($username, $password, $email, $id);
 
-            // insert database
-            $kq = $this->usermodel->UpdateUser($username, $password, $email, $id);
-
-            // Hien thi trang thai
-            $teo = $this->model;
-            $this->view("master", [
-                "page" => "updatesuccess",
-                "result" => $kq
-            ]);
+                // Hien thi trang thai
+                $teo = $this->model;
+                $this->view("master", [
+                    "page" => "updatesuccess",
+                    "result" => $kq
+                ]);
+            }
         }
     }
 }
