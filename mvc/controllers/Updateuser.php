@@ -6,7 +6,7 @@ class Updateuser extends Controller
 
     function __construct()
     {
-        $this->model  = $this->model("SinhVienModel");
+        $this->model  = $this->model("Export");
         $this->usermodel = $this->model("UserModel");
     }
 
