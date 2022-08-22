@@ -27,7 +27,7 @@ class Updateuser extends Controller
             $password = password_hash($password, PASSWORD_DEFAULT);
             $email = $_POST['email'];
             $kq = $this->usermodel;
-            $check = $kq->CheckUsername($_POST['username']);
+            $check = $kq->CheckUsernameUpdate($_POST['username'], $id);
             if ($check) {
                 $this->view("master", [
                     "page" => "checkupdate"

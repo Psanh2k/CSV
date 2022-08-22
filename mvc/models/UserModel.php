@@ -19,10 +19,9 @@ class UserModel extends DB
         }
         return $result;
     }
-
     public function CheckUsername($un)
     {
-        $qr = "SELECT id FROM user WHERE username = '$un'";
+        $qr = "SELECT * FROM user WHERE username = '$un'";
         $row = mysqli_query($this->conn, $qr);
         $kq = false;
         if (mysqli_num_rows($row) > 0) {
@@ -30,9 +29,9 @@ class UserModel extends DB
         }
         return $kq;
     }
-    public function UpdateExceptID($id)
+    public function CheckUsernameUpdate($un, $id)
     {
-        $qr = "SELECT * FROM user WHERE id != $id";
+        $qr = "SELECT * FROM user WHERE username = '$un' AND id != $id";
         $row = mysqli_query($this->conn, $qr);
         $kq = false;
         if (mysqli_num_rows($row) > 0) {

@@ -2,7 +2,7 @@
 
 while($row = mysqli_fetch_assoc($data['data'])){
     echo '<div class="container">
-    <div class="title" style="display: block; text-align:center;font-weight: bold; margin-top:20px; height:60px; line-height:60px; background-color:#4cbddb6e">UPDATE USERS</div>
+    <h1 class="title" style="text-align: center; color:#ac0c0e;font-family: sans-serif;">UPDATE USERS</h1>
     <form action="../../Updateuser/KhachHangUpdate/'.$row['id'].'" method="POST">
         <table>
 
