@@ -6,7 +6,7 @@ class UserManagement extends Controller
 
     function __construct()
     {
-        $this->model  = $this->model("Export");
+        $this->model  = $this->model("UserExport");
     }
 
     function Start()

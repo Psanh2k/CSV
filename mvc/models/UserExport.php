@@ -1,5 +1,5 @@
 <?php
-class SinhVienModel extends DB
+class UserExport extends DB
 {
     public function Users()
     {
