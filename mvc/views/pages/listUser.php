@@ -2,8 +2,8 @@
     <h1 style="text-align: center; color:#ac0c0e;font-family:sans-serif;">List User</h1>
     <a class="btn_href" href="./Adduser">AddUser</a>
 </div>
-<div>
-    <table>
+<div >
+    <table style="margin:auto;">
         <thead>
             <tr>
                 <th>STT</th>
@@ -23,7 +23,10 @@
                         <td>" . $row['password'] . "</td>
                         <td>" . $row['email'] . "</td>
                         <td>" . $row['Creat_at'] . "</td>
-                        <td><a class='btn_href' href='./Updateuser/Update/" . $row['id'] . "'>Update</a></td>
+                        <td>
+                        <a style= 'margin:10px' class='btn_href' href='./Updateuser/Update/" . $row['id'] . "'>Update</a>
+                        <a style= 'margin:10px' class='btn_href' href='./Deleteuser/KhachHangDelete/" . $row['id'] . "'>Delete</a>
+                        </td>
                     ";
             }
 

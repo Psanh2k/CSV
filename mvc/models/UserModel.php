@@ -19,6 +19,15 @@ class UserModel extends DB
         }
         return $result;
     }
+    public function DeleteUser($id)
+    {
+        $qr = "DELETE FROM user WHERE id = $id ";
+        $result = false;
+        if (mysqli_query($this->conn, $qr)) {
+            $result = true;
+        }
+        return $result;
+    }
     public function CheckUsername($un)
     {
         $qr = "SELECT * FROM user WHERE username = '$un'";

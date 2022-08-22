@@ -30,7 +30,8 @@ class Updateuser extends Controller
             $check = $kq->CheckUsernameUpdate($_POST['username'], $id);
             if ($check) {
                 $this->view("master", [
-                    "page" => "checkupdate"
+                    "page" => "checkupdate",
+                    "id" => $id
                 ]);
             } else {
                 // insert database

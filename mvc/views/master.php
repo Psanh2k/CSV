@@ -51,7 +51,7 @@
             border: 1px solid black;
             border-collapse: collapse;
             padding: 20px;
-            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
