@@ -10,7 +10,7 @@
                 <th>Username</th>
                 <th>PassWord</th>
                 <th>Email</th>
-                <th>Creat_at</th>
+                <th>Created_at</th>
                 <th>Update</th>
             </tr>
         </thead>
@@ -22,7 +22,7 @@
                         <td>" . $row['username'] . "</td>
                         <td>" . $row['password'] . "</td>
                         <td>" . $row['email'] . "</td>
-                        <td>" . $row['Creat_at'] . "</td>
+                        <td>" . $row['Created_at'] . "</td>
                         <td>
                         <a style= 'margin:10px' class='btn_href' href='./Updateuser/Update/" . $row['id'] . "'>Update</a>
                         <a style= 'margin:10px' class='btn_href' href='./Deleteuser/Delete_customers/" . $row['id'] . "'>Delete</a>
