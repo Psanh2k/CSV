@@ -18,7 +18,7 @@ class Updateuser extends Controller
             "data" => $teo->User($id)
         ]);
     }
-    public function KhachHangUpdate($id)
+    public function Update_customers($id)
     {
         // get data khach hang nhap
         if (isset($_POST['btn'])) {

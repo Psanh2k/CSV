@@ -18,7 +18,7 @@ class Adduser extends Controller
         ]);
     }
 
-    public function KhachHangDangKy()
+    public function Registered_customers()
     {
         // get data khach hang nhap
         if (isset($_POST['btn'])) {

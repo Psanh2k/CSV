@@ -9,7 +9,7 @@ class Deleteuser extends Controller
         $this->model  = $this->model("UserExport");
         $this->usermodel = $this->model("UserModel");
     }
-    public function KhachHangDelete($id)
+    public function Delete_customers($id)
     {
         $kq = $this->usermodel;
         $delete = $kq->DeleteUser($id);
