@@ -3,7 +3,7 @@
   </div>
   <div class="container">
       <div class="title">ADD USERS</div>
-      <form action="./Register/Registered_customers" method="POST">
+      <form action="./Adduser/Registered_customers" method="POST">
           <div class="label">
               <label for="name">Username *</label>
               <label for="password" class="password">Password*</label>
