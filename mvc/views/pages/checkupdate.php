@@ -2,5 +2,5 @@
 <div style="text-align: center;">
     <?php
     echo "<a class='btn_href' href='../../Updateuser/Update/".$data['id']."'>Return</a>";
-    ?>
+?>
 </div>

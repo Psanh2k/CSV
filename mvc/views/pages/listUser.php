@@ -11,7 +11,7 @@
                 <th>PassWord</th>
                 <th>Email</th>
                 <th>Created_at</th>
-                <th>Update</th>
+                <th>Update & Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -35,28 +35,7 @@
         </tbody>
     </table>
 </div>
-<form action="" method="POST">
+<form action="./Export/ExportUser" method="POST">
     <input style="background-color: red; margin-top:10px;" type="submit" name="btn1" id="btn1" value="Export Users">
 </form>
-<?php
-if ($data['exp']) {
-    if (isset($_POST['btn1'])) {
-        $fn = "csv_" . uniqid() . ".csv";
-        $file = fopen("./files/" . $fn, "w");
-        $rows = $data['exp'];
-        $result = false;
-        foreach ($rows as $row) {
-            if (fputcsv($file, $row)) {
-                $result = true;
-            };
-        }
-        if ($result) {
-            echo "<div style='text-align:center; margin-top:20px; font-weight:bold;'>EXPORT THANH CONG<div>";
-        } else {
-            echo "<div style='text-align:center; margin-top:20px; font-weight:bold;'>EXPORT THAT BAI<div>";
-        }
-        fclose($file);
-    }
-}
-
-?>
+<div id="messageUn1"></div>

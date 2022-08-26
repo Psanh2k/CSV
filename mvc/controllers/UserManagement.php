@@ -14,8 +14,7 @@ class UserManagement extends Controller
         $listAll = $this->model;
         $this->view("master", [
             "page" => "listUser",
-            "data" => $listAll->Users(),
-            'exp' => $listAll->Export()
+            "data" => $listAll->Users()
         ]);
     }
    

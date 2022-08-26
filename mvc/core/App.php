@@ -2,8 +2,8 @@
 class App
 {
     protected   $controller = "Adduser",
-        $action = "Start",
-        $params = [];
+                $action = "Start",
+                $params = [];
 
     function __construct()
     {

@@ -10,6 +10,13 @@ class Updateuser extends Controller
         $this->usermodel = $this->model("UserModel");
     }
 
+    function Start()
+    {
+        $this->view("master", [
+            "page" => "adduser"
+        ]);
+    }
+
     function Update($id)
     {
         $teo = $this->model;

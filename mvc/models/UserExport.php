@@ -19,7 +19,7 @@ class UserExport extends DB
         $arr = [];
         if (mysqli_num_rows($run) > 0) {
             while ($row = $run->fetch_array(MYSQLI_NUM)) {
-             $arr[] = $row;   
+             $arr[] = $row;
             }
             return $arr;
         }

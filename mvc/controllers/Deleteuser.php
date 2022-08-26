@@ -9,6 +9,12 @@ class Deleteuser extends Controller
         $this->model  = $this->model("UserExport");
         $this->usermodel = $this->model("UserModel");
     }
+    function Start()
+    {
+        $this->view("master", [
+            "page" => "adduser"
+        ]);
+    }
     public function Delete_customers($id)
     {
         $kq = $this->usermodel;
@@ -21,7 +27,7 @@ class Deleteuser extends Controller
 
             $this->view("master", [
                 "page" => "activeDelete",
-                "rs" => $rs 
+                "rs" => $rs
             ]);
         }
     }
