@@ -2,7 +2,7 @@
     <h1 style="text-align: center; color:#ac0c0e;font-family:sans-serif;">List User</h1>
     <a class="btn_href" href="./Adduser">AddUser</a>
 </div>
-<div >
+<div>
     <table style="margin:auto;">
         <thead>
             <tr>
@@ -36,6 +36,6 @@
     </table>
 </div>
 <form action="./Export/ExportUser" method="POST">
-    <input style="background-color: red; margin-top:10px;" type="submit" name="btn1" id="btn1" value="Export Users">
+    <input style="background-color: red; margin-top:10px;" type="submit" name="btn1" id="btn1" value="Export Users">    
 </form>
 <div id="messageUn1"></div>

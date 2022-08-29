@@ -14,21 +14,23 @@ class Export extends Controller
     {
         $model = $this->model;
         if (isset($_POST['btn1'])) {
-            $fn = "csv_" . uniqid() . ".csv";
-            $file = fopen("./files/" . $fn, "w");
-            $rows = $model->Export();
-            $result = false;
-            foreach ($rows as $row) {
-                if (fputcsv($file, $row)) {
-                    $result = true;
-                };
-            }
-            $this->view("master", [
-                "page" => "activeExport",
-                "rs" => $result,
+            $filename = 'export.csv';
+            //output the headers for the CSV file
+            header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+            header('Content-Description: File Transfer');
+            header("Content-type: text/csv");
+            header("Content-Disposition: attachment; filename={$filename}");
+            header("Expires: 0");
+            header("Pragma: public");
 
-            ]);
-            fclose($file);
+            //open the file stream
+            $fh = fopen('php://output', 'w');
+            $arr = $model->Export();
+            foreach ($arr as $item) {
+                fputcsv($fh, $item);
+            }
+            // Close the file stream
+            fclose($fh);
         }
     }
 }
